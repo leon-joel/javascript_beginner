@@ -51,7 +51,9 @@ Member.prototype = {
 };
 
 // 注意！ここでmem3を作らず、既存のmem1, mem2 からgetName2, toString2にアクセスしようとすると、
-//       functionが見つからないというエラーが発生する。原因不明。
+//       functionが見つからないというエラーが発生する。
+//       JavaScriptのプロトタイプ”チェーン”はインスタンス生成時に確定するから。
+
 var mem3 = new Member('Taro', 'Kimura')
 document.writeln(mem3.getName2());
 document.writeln(mem3.toString2());
