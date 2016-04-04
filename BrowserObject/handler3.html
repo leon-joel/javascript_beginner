@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>handler3</title>
+</head>
+<body oncontextmenu="return false;">
+<pre>
+<script type="text/javascript">
+<!--
+// ページロード時のイベントハンドラを登録
+var timer;
+var timer2;
+window.onload = function() {
+    // 現在時刻表示
+    timer = window.setInterval(
+            function () {
+                // 現在の時刻を表示
+                var dat = new Date();
+                document.getElementById('result').innerHTML = dat.toLocaleTimeString();
+            },
+            1000        // interval (msec)
+    );
+
+    // 現在時刻表示（setTimeout使用）
+    timer2 = window.setTimeout(
+            function () {
+                var dat = new Date();
+                document.getElementById('result2').innerHTML = dat.toLocaleTimeString();
+            },
+            10000
+    );
+
+    // ※promptはIE8でデフォルトでは動作しない。（設定変更が必要）
+    var input = window.prompt('名前を入力してください。', '山田');
+    window.alert('入力値: ' + input);
+};
+
+// サブウィンドウを開くイベントハンドラ
+var subwin;
+function win_open() {
+    // ※設定にもよると思うが、Firefoxでは新しいタブが開いた
+    // ※Chrome/IE11では新しいウィンドウが開く
+    subwin = window.open('http://www.wings.msn.to/', 'Sample', 'width=600, height=300, scrollbars=yes, location=yes');
+}
+
+// サブウィンドウを閉じるイベントハンドラ
+function win_close (){
+    // 変数subwinが空でなく、サブウィンドウが閉じられていないときにのみクローズ
+    if (subwin && !subwin.closed){
+        // ※Firefoxのタブ、Chromeのウィンドウもちゃんと閉じたが
+        //   IE11のウィンドウは閉じなかった。
+        subwin.close();
+    }
+}
+
+
+
+//-->
+</script>
+<noscript>JavaScriptが利用できません。</noscript>
+</pre>
+<form onsubmit="return window.confirm('ページを送信してもイイですか?');">
+    <input type="submit" value="送信" />
+</form>
+
+<input type="button" value="サブウィンドウを開く" onclick="win_open()">
+<input type="button" value="サブウィンドウを閉じる" onclick="win_close()">
+
+<input type="button" value="タイマー停止" onclick="clearInterval(timer)">
+<input type="button" value="タイマー停止2" onclick="clearInterval(timer2)">
+<div id="result"></div>
+<div id="result2"></div>
+
+<!-- ウィンドウ移動系はブラウザによって動かないものが多い -->
+<input type="button" value="scrollTo" onclick="window.scrollTo(0, 200)">
+<input type="button" value="moveBy" onclick="window.moveBy(100, 100)">
+<input type="button" value="resizeBy" onclick="window.resizeBy(50, 50)">
+
+<!-- ステータスバー -->
+<a href="http://www.wings.msn.to/" onmouseover="window.status='サポートサイトはコチラです'; return true;">
+    サーバーサイド技術の学舎 - Wings
+</a>
+
+
+</body>
+</html>
