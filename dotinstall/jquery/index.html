@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Practice</title>
+
+  <style>
+    .myStyle {
+      border: 5px solid green;
+      font-size: 32px;
+    }
+  </style>
+
+
+</head>
+<body>
+  <p data-test="test">jQueryの練習</p>
+  <input type="text" value="hello">
+
+  <ul id="main">
+    <li>0</li>
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li>
+      3
+      <ul id="sub">
+        <li>3-0</li>
+        <li>3-1</li>
+        <li class="item">3-2</li>
+        <li class="item">3-3</li>
+        <li>3-4</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><a href="http://google.com">Google</a></p>
+  <p><a href="http://yahoo.co.jp">Yahoo</a></p>
+  <p><a href="http://dotinstall.com">Dotinstall</a></p>
+
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+  <script src="index.js"></script>
+
+  <script>
+    $(function() {
+      // セレクター.メソッド
+      // フィルター
+
+//      $("#sub > li:eq(2)").css('color', 'red');
+//      $("#sub > li:gt(1)").css('color', 'red');
+//      $("#sub > li:odd").css('color', 'red');
+//      $("#sub > li:contains('4')").css('color', 'red');
+
+      // メソッドを使ったDOM要素の指定
+
+//      $("#sub").parent().css('color', 'blue');
+//      $("#sub").children().css('color', 'blue');
+//      $("#sub > li:eq(2)").next().css('color', 'blue');
+//      $("#sub > li:eq(2)").siblings().css('color', 'blue');   // siblings: 兄弟を選択。但し、自身は含まない。
+
+      // 属性セレクタ
+//      $('a[href="http://google.com"]').css('background', 'red');
+//      $('a[href!="http://google.com"]').css('background', 'red');
+//      $('a[href*="dotinstall"]').css('background', 'red');
+//      $('a[href$="jp"]').css('background', 'red');
+
+      // .css 設定/取得
+//      $('p').css('color', 'white').css('background', 'blue');
+//      console.log($('p').css('color'));
+
+      // classを適用・除去 addClass, removeClass
+//      $('p').addClass('myStyle');
+
+      // html属性の値を設定・取得
+//      console.log($('a').attr('href'));             // 取得
+//      $('a').attr('href', 'http://google.co.jp');   // 設定
+
+      // カスタム属性（data属性）の値を設定・取得
+//      console.log($('a').data('sitename'));   // -> undefined
+//      $('a').data('sitename', 'Google');      //
+//      console.log($('a').data('sitename'));   // -> Google
+
+      // タグの内容textを取得・編集
+//      console.log($('p:first-of-type').text());  // first-of-typeを付けないと、全てのtextコンテントが繋がって取得されてしまうようだ
+//      $('p:first-of-type').text('jQuery徹底演習');  // first-of-typeを付けないと、全てpタグの内容が同じ値に設定される
+      // htmlを設定
+//      $('p:first-of-type').html('<a href="">click me!</a>');
+
+      // inputタグの値を取得・設定
+//      console.log($('input').val());
+//      $('input').val('hello, again!');
+
+      // 削除系
+      $('p').empty();   // 要素自体やその属性はそのまま残っている
+      $('p').remove();  // 要素自体が削除される
+
+
+
+    });
+
+  </script>
+</body>
+</html>
