@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+  <title>スクロール実験</title>
+</head>
+<body style="text-align: center;">
+  <h1>スクロール実験</h1>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+  <p>hello!</p>
+
+  <div id="back-to-top" style="position: fixed; right: 5px; bottom: 5px;"><a href="#">↑へ</a></div>
+  <div id="pos" style="position: fixed; left: 5px; bottom: 5px;"></div>
+
+  <script>
+    $(function () {
+      // #back-to-topを消す
+      $('#back-to-top').hide();
+
+      // スクロールが十分されたら back-to-topを表示。
+      // スクロールが戻ったら非表示
+      $(window).scroll(function () {
+        $('#pos').text($(this).scrollTop());
+
+        if (60 < $(this).scrollTop()) {
+          $('#back-to-top').fadeIn();
+        }else{
+          $('#back-to-top').fadeOut();
+        }
+      });
+
+      // back-to-topがクリックされたら上に戻る
+      $('#back-to-top a').click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);  // 500ms
+        return false;
+      })
+    })
+
+  </script>
+</body>
+</html>
