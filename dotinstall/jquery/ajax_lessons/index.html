@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Practice</title>
+
+  <style>
+    .myStyle {
+      border: 5px solid green;
+      font-size: 32px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <p data-test="test">jQueryの練習</p>
+
+  <button id='btnReadMore'>もっとよむ</button>
+
+  <input type="text" name="name" id="name">
+  <input type="button" id="btnGreet" value="Greet!">
+
+  <div id='result'></div>
+
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+  <script>
+    $(function() {
+      $('#btnReadMore').click(function() {
+
+        // loadの後に、#messageの色を変えようとしているが、実際にはこれは上手く行かない。
+        // loadメソッドは非同期で実行されるため、↓のメソッドを実行する時にはまだ#messageが存在していないのが原因。
+//        $('#result').load('more.html');
+//        $('#message').css('color', 'red');
+
+        // loadのコールバックにメソッドを登録するやりかたなら上手く行く
+        $('#result').load('more.html', function () {
+          $('#message').css('color', 'red');
+        });
+      });
+
+      $('#btnGreet').click(function () {
+        $.get('greet.php', {
+          name: $('#name').val()
+        }, function (data) {
+          $('#result').html(data.message + '(' + data.length + ')');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
