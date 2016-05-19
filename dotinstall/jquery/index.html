@@ -15,7 +15,12 @@
 </head>
 <body>
   <p data-test="test">jQueryの練習</p>
-  <input type="text" value="hello">
+  <input id="name" type="text" value="hello">
+  <select name="members" id="members">
+    <option value="1">C#</option>
+    <option value="2">Ruby</option>
+    <option value="3">JavaScript</option>
+  </select>
 
   <ul id="main">
     <li>0</li>
@@ -36,6 +41,10 @@
   <p><a href="http://google.com">Google</a></p>
   <p><a href="http://yahoo.co.jp">Yahoo</a></p>
   <p><a href="http://dotinstall.com">Dotinstall</a></p>
+
+  <div id="box" style="width:100px; height:100px; background: red;"></div>
+
+  <button id="btnOn">Vanish!</button>
 
   <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
   <script src="index.js"></script>
@@ -93,7 +102,73 @@
       $('p').empty();   // 要素自体やその属性はそのまま残っている
       $('p').remove();  // 要素自体が削除される
 
+      // 要素をinsert
+      var li = $('<li>').text('just added.');
+//      $('ul > li').before(li);    // 全てのli要素の前に挿入される
+//      $('ul > li:eq(1)').before(li);      // 1番目のli要素の前に挿入される ★子階層のliには適用されないのはなぜかな？ff,chrome同様
+//      li.insertBefore($('ul > li:eq(1)'));  // 上と同じ
 
+//      $('ul').prepend(li);  // 子要素の先頭に追加される ★やはり子階層のulには適用されなかった
+//      li.prependTo($('ul'));  // 同上 ★こちらは両方の階層に適用された！ただし！！！！！appendToと一緒に使った場合は子階層の方には適用されなかった！！！！！
+//      $('ul').append(li);   // 子要素の末尾に追加される ★こちらは子階層のulにも適用された！
+      li.appendTo($('ul')); // 同上
+
+      // show/hide/ fadeIn/fadeOut
+//      $('#box').hide('show');   // 消すスピード
+//      $('#box').show(800);    // 消える時間msec
+//      $('#box').hide('fast');    // 消えるスピード
+//
+//      $('#box').fadeIn(1000);
+//
+//      // イベント完了時に起動するイベントハンドラ的な関数をセット出来る
+//      $('#box').fadeOut(2000, function () {
+//        alert("It's gone!");
+//      });
+
+      // イベント
+      $('#box').click(function () {
+        alert("CLICKED!!!");
+      });
+      $('#box')
+          .mouseover(function () {
+            $(this).css('background', 'green');
+          })
+          .mouseover(function () {
+            $(this).css('background', 'green');
+          })
+          .mousemove(function (e) {
+            $(this).text(e.offsetY);  // Divの左上原点
+//            $(this).text(e.clientY);  // Documentの左上原点 ※X/Yでも同じ。pageX/Yでも同じ？
+//            $(this).text(e.screenY);  // 画面の左上原点
+          });
+
+      // フォーカスがあたった・外れた
+      $('#name')
+          .focus(function () {
+            $(this).css('background', 'red');
+          })
+          .blur(function () {
+            $(this).css('background', 'white');
+          });
+      // 選択アイテムが変更された
+      $('#members').change(function () {
+        alert("select changed!");
+      });
+
+      // ボタンを押すと、要素が挿入される
+      $('#btnOn').click(function () {
+        var p = $('<p>').text('Van!').addClass('vanish');
+        p.insertAfter($(this));
+      });
+
+      //script読み込み時に存在しない要素（動的に生成された要素）に対しては、
+      // イベントハンドラを登録出来ない ⇒★ここで on の出番！
+//      $('.vanish').click(function () {
+//        $(this).remove();
+//      })
+      $('body').on('click', '.vanish', function () {
+        $(this).remove();
+      });
 
     });
 
