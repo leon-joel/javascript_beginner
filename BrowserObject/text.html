@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6-4 フォーム要素にアクセスする - Formオブジェクト（テキスト系） -</title>
+</head>
+<body>
+<pre>
+<script type="text/javascript">
+<!--
+function chk() {
+    // text要素
+    var q = document.fm.old;
+
+    // 年齢が空でない場合のみ数値であるかどうかをチェック
+    if (q.value != null && q.value != '') {
+        if (isNaN(q.value)){
+            // 数値じゃなかった
+            window.alert('年齢は数値で入力して下さい。');
+            q.value = q.defaultValue; // デフォルト値に戻す
+            q.focus();                // フォーカスを与える
+            q.select();               // テキストを全選択する
+            return false; // onsubmitイベントをキャンセル
+        }
+    }
+}
+//-->
+</script>
+<noscript>JavaScriptが利用できません。</noscript>
+</pre>
+
+<form name="fm" method="POST" action="" onsubmit="return chk()">
+  <label>
+    年齢:
+    <input type="text" name="old" value="20" size="3"/>
+    歳
+  </label>
+  <input type="submit" value="送信"/>
+</form>
+
+</body>
+</html>
