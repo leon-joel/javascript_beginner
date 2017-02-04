@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6-4 フォーム要素にアクセスする - Formオブジェクト -</title>
+</head>
+<body>
+<pre>
+<script type="text/javascript">
+<!--
+function process() {
+    // Formオブジェクトにアクセス
+    // ★いろんな方法でアクセス出来ます！以下4通り x それぞれの組み合わせで！
+    // ★基本的には各要素に付けた name属性 を元にアクセスする。
+    var name = document.fm.name.value;
+//    var name = document.forms[0].elements[0].value;
+//    var name = document.forms['fm'].elements['name'].value;
+//    var name = document['fm']['name'].value;
+    window.alert('こんにちは ' + name + 'さん！');
+    return false;
+}
+
+function process_elements() {
+    var result = '';
+    for (var i = 0; i < document.fm2.elements.length; i++){
+        result += document.fm2.elements[i].name + ' ' + document.fm2.elements[i].value + '\n';
+        // 最後の 送信ボタンのvalueも取れる
+    }
+    window.alert(result);
+    return false;
+}
+
+// 引数でFormが渡される（特定のFormに依存しないメソッドになる）
+function process3(f) {
+    window.alert('こんにちは ' + f.name.value + 'さん');
+    return false;
+}
+//-->
+</script>
+<noscript>JavaScriptが利用できません。</noscript>
+</pre>
+
+
+<form name="fm" onsubmit="return process()">
+  名前:
+  <input type="text" name="name" size="10"/>
+  <input type="submit" value="送信"/>
+</form>
+
+<form name="fm2" onsubmit="return process_elements()">
+  <label>name1:
+  <input type="text" name="name1" size="10"/>
+  </label><br>
+
+  <label>name2:
+  <input type="text" name="name2" size="10"/>
+  </label><br>
+
+  <label>name3:
+  <input type="text" name="name3" size="10"/>
+  </label><br>
+
+  <input type="submit" value="送信"/>
+</form>
+
+<!--FormをJSに送り込む-->
+<!-- ★これだとだめ！↓-->
+<!--<form name="fm3" onsubmit="return process3(this.form)">-->
+<form>
+  名前:
+  <input type="text" name="name" size="10"/>
+  <!-- ★これはOK! onclickハンドラーでしかthis.formは使えないのかな? -->
+  <input type="submit" value="送信" onclick="process3(this.form)"/>
+</form>
+
+</body>
+</html>
