@@ -1,28 +1,67 @@
 ===========================================================================
-ã€ ã‚½ãƒ•ãƒˆå ã€‘  æ”¹è¨‚æ–°ç‰ˆJavaScriptæœ¬æ ¼å…¥é–€ï¼ˆã‚µãƒ³ãƒ—ãƒ«ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ï¼‰
-ã€ä½œã€€ã€€ã€€è€…ã€‘ã€€å±±ç”°ç¥¥å¯›
-ã€ç™»  éŒ²  åã€‘ã€€samples.zip
+yƒ\ ƒt ƒg–¼z@JavaScript–{Ši“ü–å`ƒ‚ƒ_ƒ“ƒXƒ^ƒCƒ‹‚É‚æ‚éŠî‘b‚©‚ç
+@@@@@@@@@@AjaxEjQuery‚Ü‚Åi“Y•tƒTƒ“ƒvƒ‹ƒ\[ƒXj
+yì@@@ŽÒz@ŽR“cËŠ°inami@wings.msn.toj
+y“o  ˜^  –¼z@samples.zip
 ===========================================================================
 
-â—‹é…å¸ƒãƒ•ã‚¡ã‚¤ãƒ«ã®ç´¹ä»‹
-ã€€ã“ã®é…å¸ƒãƒ•ã‚¡ã‚¤ãƒ«ã¯ã€æŠ€è¡“è©•è«–ç¤¾åˆŠã€Œæ”¹è¨‚æ–°ç‰ˆJavaScriptæœ¬æ ¼å…¥é–€ã€ã§ç´¹ä»‹ã•ã‚Œã¦ã„ã‚‹ã‚µãƒ³ãƒ—ãƒ«ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’é›»å­ãƒ™ãƒ¼ã‚¹ã§æä¾›ã—ã¾ã™ã€‚
-ã€€ä½¿ç”¨ã™ã‚‹ã«ã‚ãŸã£ã¦å¿…è¦ãªè¨­å®šã€åŠã³ã€å¿…è¦ãªã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆé¡žç­‰ã¯ä¸€åˆ‡å«ã‚“ã§ã„ãªã„ã®ã§æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
+›ƒ\ƒtƒgÐ‰î
+@–{ƒTƒ“ƒvƒ‹ƒ\[ƒX‚ÍA‹Zp•]˜_ŽÐŠ§uJavaScript–{Ši“ü–å@`ƒ‚ƒ_ƒ“ƒXƒ^ƒCƒ‹‚É
+@‚æ‚éŠî‘b‚©‚çAjaxEjQuery‚Ü‚Åv‚ÅÐ‰î‚³‚ê‚Ä‚¢‚éƒ\[ƒXƒR[ƒh‚ð“dŽqƒx[ƒX‚Å
+@’ñ‹Ÿ‚·‚é‚à‚Ì‚Å‚·B
+@Žg—p‚·‚é‚É‚ ‚½‚Á‚Ä•K—v‚ÈÝ’èA‹y‚ÑA•K—v‚ÈƒRƒ“ƒ|[ƒlƒ“ƒg—Þ“™‚ÍˆêØŠÜ‚ñ‚Å
+@‚¢‚È‚¢‚Ì‚Å’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B
+@‚Ü‚½AŠÂ‹«Ý’è•û–@‚É‚Â‚¢‚Ä‚ÍA‘Ð–{•¶‚ðŽQÆŠè‚¢‚Ü‚·B
 
-â—‹ES2015å¯¾å¿œã®ã‚µãƒ³ãƒ—ãƒ«ã«ã¤ã„ã¦
-ãƒ»ï¼»ES2015ï¼½ã®ã‚¢ã‚¤ã‚³ãƒ³ãŒä»˜ã„ã¦ã„ã‚‹é …ã®ã‚µãƒ³ãƒ—ãƒ«ï¼ˆãƒˆãƒ©ãƒ³ã‚¹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«å‰ï¼‰ã¯ã€åˆ©ç”¨ã—ã¦ã„ã‚‹ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼ã«ã‚ˆã£ã¦ã¯ãã®ã¾ã¾ã§ã¯å‹•ä½œã—ãªã„ã‚‚ã®ãŒã‚ã‚Šã¾ã™ï¼ˆæœ¬æ›¸æ¤œè¨¼ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¯ã€æ›¸ç±å†…ã®ã€Œæœ¬æ›¸ã®èª­ã¿æ–¹ã€ã‚’å‚ç…§ã—ã¦ãã ã•ã„ï¼‰ã€‚
-ãƒ»å„ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼ã®ãƒ•ã‚¡ã‚¤ãƒ«ã”ã¨ã®å¯¾å¿œçŠ¶æ³ã¯ã€ŒES2015å¯¾å¿œçŠ¶æ³.pdfã€ã«ã¾ã¨ã‚ã¦ãŠã‚Šã¾ã™ã®ã§ã€å‚è€ƒã«ã—ã¦ãã ã•ã„ã€‚
-ãƒ»ãªãŠã€é…å¸ƒã‚µãƒ³ãƒ—ãƒ«ã§ã¯ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ãƒˆãƒ©ãƒ³ã‚¹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«å¾Œã®.jsãƒ•ã‚¡ã‚¤ãƒ«ã‚’æœ‰åŠ¹ã«ã—ã¦ã„ã¾ã™ã€‚ã“ã®ã‚³ãƒ¼ãƒ‰ã¯ã€æœ¬æ–‡ä¸Šç‰¹ç­†ã—ã¦ã„ãªã„é™ã‚Šã€æœ¬æ›¸ã®æ¤œè¨¼ãƒ–ãƒ©ã‚¦ã‚¶ãƒ¼ã™ã¹ã¦ã§å‹•ä½œã—ã¾ã™ã€‚
+›ƒTƒ“ƒvƒ‹‚ÌŒŸØƒuƒ‰ƒEƒU
+@–{ƒTƒ“ƒvƒ‹‚ÍAˆÈ‰º‚Ìƒuƒ‰ƒEƒU‚Å“®ìŒŸØ‚ðs‚Á‚Ä‚¨‚è‚Ü‚·B
+@@EInternet Explorer 8.0
+@@EFirefox 3.6
+@@EGoogle Chrome 6.0
+@@EOpera 10.61
+@@ESafari 5.0
 
-â—‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ä½¿ç”¨ãƒ»å†é…å¸ƒ
-ã€€ãƒ»å½“ã‚µãƒ³ãƒ—ãƒ«ã¯ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã§ã™ãŒã€è‘—ä½œæ¨©ã‚’æ”¾æ£„ã™ã‚‹ã‚‚ã®ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
-ã€€ãƒ»æœ¬ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½¿ç”¨ã—ï¼Œç›´æŽ¥çš„ã¾ãŸã¯é–“æŽ¥çš„ã«ç”Ÿã˜ã‚‹ä¸€åˆ‡ã®æå®³ã«ã¤ã„ã¦ã€åˆ¶ä½œè€…ã¯å¦‚ä½•ãªã‚‹è²¬ä»»ã‚‚è² ã‚ãšã€ã¾ãŸç¾©å‹™ã‚’ã‚‚ã¡ã¾ã›ã‚“ã€‚
-ã€€ãƒ»å†é…å¸ƒã¯ç¦æ­¢ã§ã™ã€‚åŽŸå‰‡çš„ã«ã¯å‡ºå…¸ã‚’æ˜Žè¨˜ã—ã¦ã‚‚ä¸å¯ã§ã™ã€‚ã©ã†ã—ã¦ã‚‚ä½¿ç”¨ã•ã‚ŒãŸã„ã¨ã„ã†å ´åˆã«ã¯ã€äº‹å‰ã«è‘—ä½œæ¨©è€…ã«å•åˆã›é¡˜ã„ã¾ã™ã€‚
-ã€€ãƒ»é›‘èªŒã‚„ä»–ã®ãƒãƒƒãƒˆã‚„ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ãªã©ã«ç™»éŒ²ã™ã‚‹æ™‚ã¯äº‹å‰äº‹å¾Œã«é–¢ã‚ã‚‰ãšã€ãªã‚“ã‚‰ã‹ã®é€£çµ¡ã‚’ãŠé¡˜ã„è‡´ã—ã¾ã™ã€‚åŸºæœ¬çš„ã«ç¦æ­¢ã¯ã—ã¾ã›ã‚“ãŒã€æŠŠæ¡ã‚’ã—ãŸã„ã¨æ€ã£ã¦ãŠã‚Šã¾ã™ã€‚
+›ŽQl}‘AŽQlƒTƒCƒg
+@‚æ‚è[‚­JavaScript‚ðŠwK‚µ‚½‚¢A‚ ‚é‚¢‚ÍA‚»‚ÌŽü•Ó‹Zp‚ÉŠÖ‚·‚é—‰ð‚ð•â‘«
+@‚µ‚½‚¢‚Æ‚¢‚¤•û‚ÍAˆÈ‰º‚Ì‚æ‚¤‚È‘ÐAƒTƒCƒg‚ðŽQÆ‚·‚é‚±‚Æ‚ð‚¨Š©‚ß‚µ‚Ü‚·B
 
-â—‹é€£çµ¡å…ˆ
-ã€€å½“ã‚µãƒ³ãƒ—ãƒ«ã‚½ãƒ¼ã‚¹ã«é–¢ã™ã‚‹æ„Ÿæƒ³ãƒ»ãƒã‚°å ±å‘Šãƒ»è¦æœ›ç­‰ã¯ä»¥ä¸‹ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã«ãŠé¡˜ã„è‡´ã—ã¾ã™ã€‚å…¨ã¦ã«å¯¾å¿œã§ãã‚‹ã‚ã‘ã§ã¯ã‚ã‚Šã¾ã›ã‚“ãŒã€å‚è€ƒã«ã•ã›ã¦ã„ãŸã ãã¾ã™ã€‚
-ã€€ã¾ãŸã€å€‹åˆ¥ã®ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºä½œæ¥­ã‚’è«‹ã‘è² ã†ã‚‚ã®ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã®ã§ã€äºˆã‚å¾¡äº†æ‰¿ä¸‹ã•ã„ã¾ã™ã‚ˆã†ã€ãŠé¡˜ã„è‡´ã—ã¾ã™ã€‚
+@1.“ÆKPHP ‘æ2”ÅiãÄ‰jŽÐj
+@@@http://www.wings.msn.to/index.php/-/A-03/978-4-7981-2151-2/
+@@@Ajax‹Zp‚ð—˜—p‚·‚é‚É‚ÍAƒT[ƒoƒTƒCƒh‹Zp‚Ì—‰ð‚ÍŒ‡‚©‚¹‚Ü‚¹‚ñB
+@@@ƒT[ƒoƒTƒCƒh‹Zp‚É‚à‚³‚Ü‚´‚Ü‚È‚à‚Ì‚ª‚ ‚è‚Ü‚·‚ªA‰ŠwŽÒ‚Ì•û‚ª
+@@@‚Ü‚¸Žæ‚èŠ|‚©‚é‚È‚ç‚ÎAPHP‚ð‚¨Š©‚ß‚µ‚Ü‚·B
 
-ã€€WINGSãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ
-ã€€URL: http://www.wings.msn.to/
-ã€€E-Mail: yoshihiro@wings.msn.to
+@2.u‚±‚ê‚È‚ç‚í‚©‚é Web•W€ƒTƒCƒg‚Ìì‚è•û “ü–å‚Ì“ü–åviãÄ‰jŽÐj
+@@@http://www.wings.msn.to/index.php/-/A-03/978-4-7981-1329-6/
+@@@Web‹ÆŠE‚Å‚ÍA‚à‚Í‚âƒXƒ^ƒ“ƒ_[ƒh‚Æ‚È‚è‚Â‚Â‚ ‚éuWeb•W€vB
+@@@‚±‚ÌuWeb•W€v‚É‘Î‰ž‚·‚éƒTƒCƒg§ì‚Ìl‚¦•ûEì‚è•ûEƒfƒUƒCƒ“‚É‚Â‚¢‚ÄA
+@@@‚â‚³‚µ‚­“Ç‚Ý‚â‚·‚­‰ðà‚µ‚Ü‚·B
+@@@XHTML^CSS‚âƒAƒNƒZƒVƒrƒŠƒeƒB•SEO‚È‚Ç‚ÉŠÖ‚·‚é‹Zp‰ðà‚Ì‚Ý‚È‚ç‚¸A
+@@@ƒiƒrƒQ[ƒVƒ‡ƒ“^Ž‹Šo•\Œ»‚ÌƒRƒc‚âƒeƒNƒjƒbƒN‚È‚Ç‚àÐ‰î‚µ‚Ü‚·B
+
+@3.jQuery‹tˆø‚«ƒŠƒtƒ@ƒŒƒ“ƒX
+@@@http://www.atmarkit.co.jp/fdotnet/jqueryref/index/
+@@@‘æ9Í‚âAppendix‚Å‚àÐ‰î‚µ‚½jQuery‚Ì‹tˆø‚«ƒŠƒtƒ@ƒŒƒ“ƒX‚Å‚·B
+@@@‚³‚Ü‚´‚Ü‚È‹Ç–Ê‚É‘Î‰ž‚Å‚«‚é‚æ‚¤A–Ú“I•Ê‚ÉŽå—v‚Èƒƒ\ƒbƒh‚ª‚Ü‚Æ‚Ü‚Á‚Ä
+@@@‚¢‚Ü‚·‚Ì‚ÅAjQuery‚É‚æ‚éŠJ”­‚ðs‚¤ê‡‚ÉŠˆ—p‚Å‚«‚Ü‚·B
+
+›ƒvƒƒOƒ‰ƒ€Žg—pEÄ”z•z
+@E“–ƒTƒ“ƒvƒ‹‚ÍƒI[ƒvƒ“ƒ\[ƒX‚Å‚·‚ªAŽ„iŽR“cËŠ°j‚Ì’˜ìŒ ‚ð•úŠü‚·‚é‚à‚Ì‚Å‚Í
+@@‚ ‚è‚Ü‚¹‚ñB
+@E–{ƒvƒƒOƒ‰ƒ€‚ðŽg—p‚µC’¼Ú“I‚Ü‚½‚ÍŠÔÚ“I‚É¶‚¶‚éˆêØ‚Ì‘¹ŠQ‚É‚Â‚¢‚ÄA§ì
+@@ŽÒ‚Í”@‰½‚È‚éÓ”C‚à•‰‚í‚¸A‚Ü‚½‹`–±‚ð‚à‚¿‚Ü‚¹‚ñB
+@EÄ”z•z‚Í‹ÖŽ~‚Å‚·BŒ´‘¥“I‚É‚Ío“T‚ð–¾‹L‚µ‚Ä‚à•s‰Â‚Å‚·B‚Ç‚¤‚µ‚Ä‚àŽg—p‚³‚ê‚½
+@@‚¢‚Æ‚¢‚¤ê‡‚É‚ÍAŽ–‘O‚É’˜ìŒ ŽÒ‚É–â‡‚¹Šè‚¢‚Ü‚·B
+@EŽGŽ‚â‘¼‚Ìƒlƒbƒg‚âƒz[ƒ€ƒy[ƒW‚È‚Ç‚É“o˜^‚·‚éŽž‚ÍŽ–‘OŽ–Œã‚ÉŠÖ‚í‚ç‚¸A‚È‚ñ
+@@‚ç‚©‚Ì˜A—‚ð‚¨Šè‚¢’v‚µ‚Ü‚·BŠî–{“I‚É‹ÖŽ~‚Í‚µ‚Ü‚¹‚ñ‚ªA”cˆ¬‚ð‚µ‚½‚¢‚ÆŽv‚Á
+@@‚Ä‚¨‚è‚Ü‚·B
+
+›˜A—æ
+@“–ƒTƒ“ƒvƒ‹ƒ\[ƒX‚ÉŠÖ‚·‚éŠ´‘zEƒoƒO•ñE—v–]“™‚ÍˆÈ‰º‚ÌƒAƒhƒŒƒX‚É‚¨Šè‚¢’v‚µ‚Ü
+@‚·B‘S‚Ä‚É‘Î‰ž‚Å‚«‚é‚í‚¯‚Å‚Í‚ ‚è‚Ü‚¹‚ñ‚ªAŽQl‚É‚³‚¹‚Ä‚¢‚½‚¾‚«‚Ü‚·B
+@‚Ü‚½AŒÂ•Ê‚ÌƒJƒXƒ^ƒ}ƒCƒYì‹Æ‚ð¿‚¯•‰‚¤‚à‚Ì‚Å‚Í‚ ‚è‚Ü‚¹‚ñ‚Ì‚ÅA—\‚ßŒä—¹³‰º‚³
+@‚¢‚Ü‚·‚æ‚¤A‚¨Šè‚¢’v‚µ‚Ü‚·B
+
+@@ŽR“cËŠ°iYamada Yoshihiroj
+@@URL: http://www.wings.msn.to/
+@@E-Mail: nami@wings.msn.to

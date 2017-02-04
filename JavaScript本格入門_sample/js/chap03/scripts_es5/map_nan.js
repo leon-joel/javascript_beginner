@@ -1,5 +1,0 @@
-'use strict';
-
-var m = new Map();
-m.set(NaN, 'hoge');
-console.log(m.get(NaN));
