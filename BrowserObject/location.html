@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6-5 Locationオブジェクト</title>
+</head>
+
+<body>
+<pre>
+<script type="text/javascript">
+<!--
+// 選択ボックスの選択状態が変更された時に呼ばれる
+function jump(elem) {
+    // elemにはselect要素が渡される
+    var isbn = elem.value;
+
+    // 以下のURLに飛ぶ
+    location.href = 'http://www.wings.msn.to/index.php/-/A-03/' + isbn;
+    // ※replaceメソッドを使った場合は履歴を残さない。つまり「戻る」ことができない。
+//    location.replace('http://www.wings.msn.to/index.php/-/A-03/' + isbn);
+}
+//-->
+</script>
+<noscript>JavaScriptが利用できません。</noscript>
+</pre>
+
+<form name="fm">
+  <select name="book" onchange="jump(this)">
+    <option value="">---書籍名を選択して下さい---</option>
+    <option value="978-4-7741-4223-4">Apacheポケットリファレンス</option>
+    <option value="978-4-7741-4223-1">俺のフレンチ</option>
+    <option value="978-4-7741-4223-2">俺のポケモン</option>
+    <option value="978-4-7741-4223-5">俺の心</option>
+    <option value="978-4-7741-4223-3">俺の稲妻</option>
+  </select>
+</form>
+
+
+</body>
+</html>
