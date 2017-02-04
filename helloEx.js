@@ -17,7 +17,20 @@ var obj = { x:1, y:2, z:3 };
 document.writeln(obj.x);
 document.writeln(obj['x']);
 
+
 //document.writeln(kkk);  // kkkはundefined。ここでエラーが発生し、以降は実行されない。
+
+
+document.writeln('四則演算');
+x = 250;
+y = 100;
+d = x / y;
+document.writeln(d);    // -> 2.5 ★小数になる！
+
+d2 = Math.floor(x / y);
+document.writeln(d2);   // -> 2 ★整数の商を求めるなら Math.floorしないといけないらしい。
+
+
 
 document.writeln('シフト演算子のテスト');
 x = 10;
