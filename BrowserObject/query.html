@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formオブジェクト - Location でクエリー情報を取得</title>
+</head>
+<body>
+<pre>
+<script type="text/javascript">
+<!--
+function $q() {
+    // 戻り値用連想配列
+    var result = {};
+
+    // searchプロパティは ?以降の文字列そのまま
+    document.writeln(location.search);
+
+    // ? より後ろだけ切り出し
+    var str = location.search.substring(1);
+    document.writeln(str);
+
+    // & で分割
+    document.writeln('=== split ===');
+    var params = str.split('&');
+    for (var i = 0; i < params.length; i++) {
+        document.writeln(params[i]);
+        // = で分割
+        var kv = params[i].split('=');
+        document.writeln('  => [' + kv[0] + ', ' + kv[1] + ']');
+
+        result[kv[0]] = decodeURIComponent(kv[1]);
+    }
+    return result;
+}
+
+var q = $q();
+document.writeln("--- RESULT ---");
+document.write('id：' + q['id']);
+
+//-->
+</script>
+<noscript>JavaScriptが利用できません。</noscript>
+</pre>
+
+</body>
+</html>
