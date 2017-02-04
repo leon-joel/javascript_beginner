@@ -35,6 +35,16 @@ function process3(f) {
     window.alert('こんにちは ' + f.name.value + 'さん');
     return false;
 }
+
+// チェックボックスの状態によってラジオボタンのEnable/Disableを切り替える
+function process_radio() {
+    var needed = document.fm4.need.checked;
+    var fmts = document.fm4.fmt;
+
+    for (var i = 0; i < fmts.length; i++){
+        fmts[i].disabled = !needed;
+    }
+}
 //-->
 </script>
 <noscript>JavaScriptが利用できません。</noscript>
@@ -71,6 +81,17 @@ function process3(f) {
   <input type="text" name="name" size="10"/>
   <!-- ★これはOK! onclickハンドラーでしかthis.formは使えないのかな? -->
   <input type="submit" value="送信" onclick="process3(this.form)"/>
+</form>
+
+<!-- チェックボックスの状態によってラジオボタンのEnable/Disableを切り替える -->
+<form name="fm4">
+  <label>
+    メールニュースの送信を希望:
+    <input type="checkbox" name="need" value="1" checked="checked" onclick="process_radio()"/>
+  </label>
+  <br>
+  <label><input type="radio" name="fmt" value="plain"/>プレーン形式</label>
+  <label><input type="radio" name="fmt" value="html"/>HTML形式</label>
 </form>
 
 </body>
