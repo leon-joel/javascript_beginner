@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Historyオブジェクト</title>
+<body>
+
+<a href="form.html">Formの実験</a>
+<hr>
+
+<!--この記法は JavaScript疑似プロトコル と呼ばれる。-->
+<!--<a href="JavaScript:history.back()">戻る</a>｜-->
+
+<!-- JavaScript疑似プロトコルではなく普通にonclickイベントハンドラーを使って以下のように書いても同じこと -->
+<a href="JavaScript:void(0)" onclick="history.back()">戻る</a>｜
+
+<a href="JavaScript:history.forward()">進む</a>
+</body>
+</html>
