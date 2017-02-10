@@ -4,16 +4,34 @@
 <title>writelnメソッドをイベントハンドラー内で使うと危険！</title>
 <script type="text/javascript">
 <!--
-window.onload = function() {
-	document.writeln('こんにちは、JavaScript！');
-  document.writeln('onloadイベントハンドラ内で使うと、documentが新しくOPENされてそちらに書き込まれるそうです。');
-  document.writeln('それにより既存のドキュメントが全部なくなってしまう！');
-};
+// これをuncommentすると、bodyタグ内の要素が表示されない（全部なくなってしまう）
+//window.onload = function() {
+//	document.writeln('こんにちは、JavaScript！');
+//  document.writeln('onloadイベントハンドラ内で使うと、documentが新しくOPENされてそちらに書き込まれるそうです。');
+//};
+
+function winOpen() {
+  var subwin = window.open('', 'Child', 'width=200, height=200');
+  subwin.document.open('text/html');
+  subwin.document.writeln('入力値');
+  subwin.document.writeln(subwin.opener.document.fm.data.value);
+  subwin.document.writeln('<br/><input type="button" value="閉じる"');
+  subwin.document.writeln('onclick="self.close();" />');
+  subwin.document.close();
+}
+
+
 //-->
 </script>
 </head>
 <body>
 こんにちは、皆さん！<br />
+
+<form name="fm">
+  <input type="text" name="data" value="出力される文字列"/>
+  <input type="button" value="開く" onclick="winOpen()"/>
+</form>
+
 <script type="text/javascript">
   document.writeln('こんにちは、インラインでwrilelnしています！');
   document.writeln('これは既存のdocumentに対して追記されますが…');
