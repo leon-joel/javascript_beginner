@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>writelnメソッドをイベントハンドラー内で使うと危険！</title>
+<script type="text/javascript">
+<!--
+window.onload = function() {
+	document.writeln('こんにちは、JavaScript！');
+  document.writeln('onloadイベントハンドラ内で使うと、documentが新しくOPENされてそちらに書き込まれるそうです。');
+  document.writeln('それにより既存のドキュメントが全部なくなってしまう！');
+};
+//-->
+</script>
+</head>
+<body>
+こんにちは、皆さん！<br />
+<script type="text/javascript">
+  document.writeln('こんにちは、インラインでwrilelnしています！');
+  document.writeln('これは既存のdocumentに対して追記されますが…');
+</script>
+</body>
+</html>
