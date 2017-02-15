@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOMの基本</title>
+
+  <script type="text/javascript">
+    <!--
+    // HTMLドキュメントloadされた時に実行
+    window.onload = function () {
+      var result = [];
+      // a要素を全て取得
+      var nodelist = document.getElementsByTagName('a');  // -> NodeListオブジェクト
+      for (var i=0; i < nodelist.length; i++){
+        result.push(nodelist.item(i).href);
+      }
+      window.alert(result.join('\n'));
+    };
+
+    // 送信ボタンクリック時に実行
+    function btn_onclick() {
+      var result = document.getElementById('result');
+      result.innerHTML = 'こんにちは' + document.fm.name.value + 'さん！';
+//      result.innerHTML = 'こんにちは' + document.getElementById('name').value + 'さん！'; // こちらでも同じこと
+    }
+
+    function btn_class_onclick() {
+      var result = [];
+      var nodelist = document.getElementsByClassName('my');
+      for (var i=0; i< nodelist.length; i++) {
+        result.push(nodelist.item(i).href);
+      }
+      document.getElementById('result2').innerHTML = result.join('<br>');
+    }
+
+    function btn_options_click() {
+      var result = [];
+
+      // select#foodを取得
+      var s = document.getElementById('food');
+
+      // childrenを取得
+      var opts = s.childNodes;
+
+      // valueを文字列化
+      for (var i=0; i < opts.length; i++) {
+        var opt = opts.item(i);
+        // 子nodeが要素ノードの場合のみ、valueを配列に追加 ★実際に<option>要素以外に空白ノードも取得されるので。
+        if (opt.nodeType == Node.ELEMENT_NODE){
+          result.push(opts.item(i).value);
+        }
+      }
+      // div#result3 に書き込む
+      document.getElementById('result3').innerHTML = result.join('<br/>');
+    }
+    //-->
+  </script>
+</head>
+<body>
+  <p id="greet">これが<strong>文書ツリー</strong>です。</p>
+
+  <a class="my" href="http://www.wings.msn.to/">サーバサイド技術の学び舎 - WINGS</a><br />
+  <a class="my" href="http://www.web-deli.com/">WebDeli</a><br />
+  <a href="http://www.atmarkit.co.jp/fdotnet/ajaxjs/index/">Ajax時代のJavaScriptプログラミング再入門</a>
+
+  <form name="fm">
+    <label>名前:
+      <input type="text" id="name" name="name" size="15" />
+    </label>
+    <input type="button" value="welcome message" onclick="btn_onclick()">
+    <div id="result"></div>
+  </form>
+
+  <form name="fm2">
+    <input type="button" value="getElementsByClassName" onclick="btn_class_onclick()">
+    <div id="result2"></div>
+  </form>
+
+  <form name="fm3">
+    <select name="food" id="food">
+      <option value="ラーメン">ラーメン</option>
+      <option value="餃子">餃子</option>
+      <option value="焼き肉">焼き肉</option>
+    </select>
+    <input type="button" value="option一覧表示" onclick="btn_options_click()">
+    <div id="result3"></div>
+  </form>
+</body>
+</html>
