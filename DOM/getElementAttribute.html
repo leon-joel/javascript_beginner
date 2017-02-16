@@ -53,10 +53,37 @@
       // div#result3 に書き込む
       document.getElementById('result3').innerHTML = result.join('<br/>');
     }
+
+    function btn_attributes_onclick() {
+      var logo = document.getElementById('logo');
+
+      // NamedNodeMapオブジェクトが返ってくる
+      // ※テキストには「IEではタグで利用可能な全ての属性が返ってくる」と書いてあるが、
+      //   IE11の場合はそういうことはなかった。（Chrome/FFと同じものだけが返ってきた）
+      var attrs = logo.attributes;
+
+      var result = [];
+      for (var i=0; i < attrs.length; i++){
+        var attr = attrs.item(i);
+        if (attr.nodeValue){
+          // nodeValueが空じゃないものだけを列挙する
+          result.push(attr.nodeName + ': ' + attr.nodeValue);
+        }
+      }
+      var resultDiv = document.getElementById('attr_result');
+      resultDiv.innerHTML = result.join('<br/>');
+    }
     //-->
   </script>
 </head>
 <body>
+  <img id="logo" src="http://www.wings.msn.to/image/wings.jpg" alt="WINGS (Www INtegrated Guide on Server-arichitecture"
+       height="67" width="215" border="0" data-test="" />
+  <form name="fm_attr">
+    <input type="button" value="attributes" onclick="btn_attributes_onclick()">
+    <div id="attr_result"></div>
+  </form>
+
   <p id="greet">これが<strong>文書ツリー</strong>です。</p>
 
   <a class="my" href="http://www.wings.msn.to/">サーバサイド技術の学び舎 - WINGS</a><br />
