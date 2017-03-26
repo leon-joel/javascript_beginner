@@ -18,11 +18,27 @@
       }
     }
 
+    function removeListener(elem, ev, listener) {
+      if (elem.removeEventListener) {
+        elem.removeEventListener(ev, listener, false);
+      } else if (elem.detachEvent) {
+        elem.detachEvent('on' + ev, listener);
+      } else {
+        throw new Error(' イベントリスナーに未対応です')
+      }
+    }
+
     addListener(window, 'load', init);
 
+    function alert_button() {
+      window.alert(' ボタンがクリックされました。');
+    }
+
     function init() {
-      addListener(document.getElementById('btn'), 'click', function () {
-        window.alert(' ボタンがクリックされました。');
+      addListener(document.getElementById('btn'), 'click', alert_button);
+
+      addListener(document.getElementById('btnRemoveListener'), 'click', function () {
+        removeListener(document.getElementById('btn'), 'click', alert_button);
       });
     }
   </script>
@@ -30,5 +46,6 @@
 </head>
 <body>
 <input type="button" id="btn" value="ダイアログ表示"/>
+<input type="button" id="btnRemoveListener" value="ダイアログ表示"/>
 </body>
 </html>
