@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>イベントに関わる情報を取得する - Eventオブジェクト</title>
+  <script type="text/javascript" src="listener.js "></script>
+  <script type="text/javascript">
+    addListener(window, 'load', function () {
+      addListener(document.getElementById('logo'), 'mousedown', function (e) {
+        var result = [];
+        result.push('発生元：' + getSource(e).id);
+        result.push('イベント：' + e.type);
+        result.push('マウスボタン：' + getButtonType(e));
+        result.push('ClientX座標：' + e.clientX);
+        result.push('ClientY座標：' + e.clientY);
+        result.push('ScreenX座標：' + e.screenX);
+        result.push('ScreenY座標：' + e.screenY);
+        result.push('Altキー  : ' + e.altKey);
+        result.push('Ctrlキー : ' + e.ctrlKey);
+        result.push('Shiftキー: ' + e.shiftKey);
+        window.alert(result.join('\n'));
+      })
+    });
+
+    // イベント発生元を取得
+    function getSource(e) {
+      if (e.target) {
+        return e.target;    // IE以外
+      } else if (window.event) {
+        return window.event.srcElement; // 古いIE
+      }
+    }
+
+    // 押されたマウスボタンを取得
+    function getButtonType(e) {
+      if (e.target) {
+        switch (e.button) {   // IE以外
+          case 0: return '0:left';
+          case 1: return '1:center';
+          case 2: return '2:right';
+        }
+      } else if (window.event) {  // 古いIE
+        switch (window.event.button) {
+          case 1: return '1:left';
+          case 2: return '2:center';
+          case 4: return '4:right';
+        }
+      }
+    }
+
+  </script>
+</head>
+<body>
+<img id="logo" src="http://www.wings.msn.to/image/wings.jpg" />
+</body>
+</html>
