@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>イベントリスナーを登録する</title>
+
+  <script>
+    // イベントリスナーの登録 ※イベントハンドラーと違い、複数のリスナーを1つのイベントに登録でき、かつ削除も出来る。
+    function addListener(elem, ev, listener) {
+      if (elem.addEventListener) {
+        // IE9以降＋その他
+        elem.addEventListener(ev, listener, false);
+      } else if (elem.attachEvent) {
+        // IE8以前
+        elem.attachEvent('on' + ev, listener);
+      } else {
+        throw new Error(' イベントリスナーに未対応です')
+      }
+    }
+
+    addListener(window, 'load', init);
+
+    function init() {
+      addListener(document.getElementById('btn'), 'click', function () {
+        window.alert(' ボタンがクリックされました。');
+      });
+    }
+  </script>
+
+</head>
+<body>
+<input type="button" id="btn" value="ダイアログ表示"/>
+</body>
+</html>
