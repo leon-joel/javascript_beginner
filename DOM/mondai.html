@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>問題集</title>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="question">
+  <h1>第1問</h1>
+  <p>最初に生まれたポケモンは？</p>
+</div>
+
+<form name="fm">
+  <label><input type="radio" name="fmt" value="1"/>ドダイトス</label>
+  <label><input type="radio" name="fmt" value="2"/>ピカチュウ</label>
+  <label><input type="radio" name="fmt" value="3"/>ジャムおじさん</label>
+
+  <!--<label>名前:-->
+    <!--<input type="text" id="name" name="name" size="15" />-->
+  <!--</label>-->
+  <br>
+  <input type="button" value="回答する" onclick="btn_onclick(this.form)">
+  <div id="result"></div>
+</form>
+
+<button id="nextButton" type="button" class="hide" onclick="nextButton_click();">次の問題へ</button>
+
+
+<script>
+  function btn_onclick(form) {
+    console.log(form.fmt.value);
+    var elem = document.getElementById("result");
+    if (form.fmt.value === "3"){
+      elem.innerHTML = "正解!!!"
+    }else{
+      elem.innerHTML = "不正解"
+    }
+    var nextButton = document.getElementById("nextButton");
+    nextButton.classList.remove("hide");
+
+
+  }
+
+  function nextButton_click(e) {
+    if (!e)
+      e = window.event;
+    var sender = e.srcElement || e.target;
+
+    var elem = document.getElementById("result");
+    elem.innerHTML = "";
+
+    sender.classList.add("hide");
+  }
+</script>
+</body>
+</html>
