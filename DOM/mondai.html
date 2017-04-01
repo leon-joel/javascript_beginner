@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
   <title>問題集</title>
   <style>
+    body {
+      position: relative;
+    }
     .hide {
       display: none;
+    }
+    #result {
+      /*float: left;*/
+      /*display: block;*/
+      position:    absolute;
+      /*width: 300px;*/
+      height:      200px;
+      line-height: 200px; /* heightに合わせることでdivないテキストを上下縦横配置 */
+      text-align:  center;
+      top:         0;
+      left:        0;
+      right:       0;
+      bottom:      0;
+      margin:      auto;
+      z-index:     -1;
+      font-size:   15rem;
+      color: lightgray;
+      text-shadow: 1px 1px 10px black;
+    }
+    .correct {
+      color:       #ffadcf;
+    }
+    #nextButton {
+      vertical-align: top;
     }
   </style>
 </head>
@@ -13,38 +42,48 @@
 
 <div id="question">
   <h1>第1問</h1>
-  <p>最初に生まれたポケモンは？</p>
+  <p>ポケモントレーナーになった時に最初にもらえるポケモンは？</p>
 </div>
 
 <form name="fm">
   <label><input type="radio" name="fmt" value="1"/>ドダイトス</label>
   <label><input type="radio" name="fmt" value="2"/>ピカチュウ</label>
-  <label><input type="radio" name="fmt" value="3"/>ジャムおじさん</label>
+  <label><input type="radio" name="fmt" value="3"/>ヒコザル</label>
+  <label><input type="radio" name="fmt" value="4"/>ジャムおじさん</label>
 
   <!--<label>名前:-->
     <!--<input type="text" id="name" name="name" size="15" />-->
   <!--</label>-->
-  <br>
-  <input type="button" value="回答する" onclick="btn_onclick(this.form)">
-  <div id="result"></div>
+  <div>
+    <input type="button" class="btn btn-primary" value="回答する" onclick="btn_onclick(this.form)">
+  </div>
 </form>
 
-<button id="nextButton" type="button" class="hide" onclick="nextButton_click();">次の問題へ</button>
+<div id="result" class="hide">
+  <p id="result_text"></p>
+  <button id="nextButton" type="button" class="btn btn-primary" onclick="nextButton_click();">次の問題へ</button>
+
+</div>
+
 
 
 <script>
   function btn_onclick(form) {
     console.log(form.fmt.value);
-    var elem = document.getElementById("result");
+    var textElem = document.getElementById("result_text");
     if (form.fmt.value === "3"){
-      elem.innerHTML = "正解!!!"
+      textElem.innerHTML = "正解!!!"
+      textElem.classList.add("correct");
     }else{
-      elem.innerHTML = "不正解"
+      textElem.innerHTML = "不正解"
+      textElem.classList.remove("correct");
     }
-    var nextButton = document.getElementById("nextButton");
-    nextButton.classList.remove("hide");
 
+    var resultElem = document.getElementById("result");
+    resultElem.classList.remove("hide");
 
+//    var nextButton = document.getElementById("nextButton");
+//    nextButton.classList.remove("hide");
   }
 
   function nextButton_click(e) {
@@ -53,9 +92,9 @@
     var sender = e.srcElement || e.target;
 
     var elem = document.getElementById("result");
-    elem.innerHTML = "";
+    elem.classList.add("hide");
 
-    sender.classList.add("hide");
+//    sender.classList.add("hide");
   }
 </script>
 </body>
