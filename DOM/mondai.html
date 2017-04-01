@@ -8,6 +8,8 @@
   <style>
     body {
       position: relative;
+      width: 90%;
+      margin: 0 auto;
     }
     .hide {
       display: none;
@@ -18,17 +20,24 @@
       position:    absolute;
       /*width: 300px;*/
       height:      200px;
-      line-height: 200px; /* heightに合わせることでdivないテキストを上下縦横配置 */
+      /*line-height: 200px; !* heightに合わせることでdivないテキストを上下中央配置 *!*/
       text-align:  center;
       top:         0;
       left:        0;
       right:       0;
       bottom:      0;
-      margin:      auto;
+      margin:      -400px auto;
       z-index:     -1;
       font-size:   15rem;
       color: lightgray;
       text-shadow: 1px 1px 10px black;
+      -webkit-transition: all 300ms 200ms ease;
+      transition: all 300ms 200ms ease;
+    }
+    #result.show {
+      /*top: 0;*/
+      /*display: block;*/
+      margin: 0 auto;
     }
     .correct {
       color:       #ffadcf;
@@ -59,7 +68,7 @@
   </div>
 </form>
 
-<div id="result" class="hide">
+<div id="result" class="">
   <p id="result_text"></p>
   <button id="nextButton" type="button" class="btn btn-primary" onclick="nextButton_click();">次の問題へ</button>
 
@@ -80,7 +89,8 @@
     }
 
     var resultElem = document.getElementById("result");
-    resultElem.classList.remove("hide");
+//    resultElem.classList.remove("hide");
+    resultElem.classList.add("show");
 
 //    var nextButton = document.getElementById("nextButton");
 //    nextButton.classList.remove("hide");
@@ -92,7 +102,7 @@
     var sender = e.srcElement || e.target;
 
     var elem = document.getElementById("result");
-    elem.classList.add("hide");
+    elem.classList.remove("show");
 
 //    sender.classList.add("hide");
   }
